@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="welcome">Welcome to Hipmunk Tic Tac Toe</string>
+    <string name="play_ttt">Play</string>
+
+    <string name="you_decide">You Decide</string>
+    <string name="decide_who_starts_first">Decide who plays first</string>
+    <string name="you_start_first">Play First</string>
+    <string name="you_start_second">Play second</string>
+
+    <string name="player_one_thinking">Your turn to move...</string>
+    <string name="player_computer_thinking">Computer is thinking...</string>
+    <string name="im_done">I\'m done</string>
+
+    <string name="new_game">New Game?</string>
+    <string name="tie">Game is a draw</string>
+    <string name="you_win">You win!</string>
+    <string name="computer_wins">Computer wins!</string>
+
+</resources>
