@@ -46,8 +46,6 @@ class StrategySecondTurnAsSecondPlayer extends Strategy {
                 && board.getMoveHistory().get(0).mYCoordinate == oppositeOpponentPosition.mYCoordinate) {
             //we want to get a middle square to threaten a win
             position = middleFromCorner(board, opponentLastPos.mXCoordinate, opponentLastPos.mYCoordinate);
-
-            //position = new TTTMove(board.getCenterSquarePosition().mXCoordinate, board.getCenterSquarePosition().mYCoordinate, TTTMark.BLANK);
         } else {
             position = getFreeCorner(opponentLastPos);
         }
