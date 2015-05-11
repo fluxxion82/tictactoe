@@ -122,9 +122,11 @@ public class TTTRules {
     }
 
     public static boolean isCornerPosition(TTTMove position) {
-        boolean rowCorner = isAtCorner(position.mXCoordinate);
-        boolean colCorner = isAtCorner(position.mYCoordinate);
-        return rowCorner && colCorner;
+        int[] opposite = getOppositeCorner(position.mXCoordinate, position.mYCoordinate);
+        if(opposite[0] >= 0) {
+            return true;
+        }
+        return false;
     }
 
     public static boolean isAtCorner(int number) {
@@ -154,6 +156,9 @@ public class TTTRules {
         } else if (x == 2 && y == 2) {
             pos[0] = 0;
             pos[1] = 0;
+        } else {
+            pos[0] = -1;
+            pos[0] = -1;
         }
 
         return pos;

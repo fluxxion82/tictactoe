@@ -44,7 +44,10 @@ class StrategySecondTurnAsSecondPlayer extends Strategy {
         TTTMove oppositeOpponentPosition = TTTRules.getOppositeCorner(opponentLastPos);
         if (board.getMoveHistory().get(0).mXCoordinate == oppositeOpponentPosition.mXCoordinate
                 && board.getMoveHistory().get(0).mYCoordinate == oppositeOpponentPosition.mYCoordinate) {
-            position = new TTTMove(board.getCenterSquarePosition().mXCoordinate, board.getCenterSquarePosition().mYCoordinate, TTTMark.BLANK);
+            //we want to get a middle square to threaten a win
+            position = middleFromCorner(board, opponentLastPos.mXCoordinate, opponentLastPos.mYCoordinate);
+
+            //position = new TTTMove(board.getCenterSquarePosition().mXCoordinate, board.getCenterSquarePosition().mYCoordinate, TTTMark.BLANK);
         } else {
             position = getFreeCorner(opponentLastPos);
         }
@@ -85,5 +88,20 @@ class StrategySecondTurnAsSecondPlayer extends Strategy {
             corner = higherPos;
         }
         return corner;
+    }
+
+    private TTTMove middleFromCorner(TTTBoard board, int x, int y) {
+        TTTMove position = null;
+        final int boardSize = board.getCurrentBoard().length;
+        for (int row = 0; row < boardSize; row++) {
+            for (int col = 0; col < boardSize; col++) {
+                TTTMove pos = new TTTMove(row, col, TTTMark.O);
+                if (board.getCurrentBoard()[row][col] == TTTMark.BLANK && !TTTRules.isCornerPosition(pos)) {
+                    position = pos;
+                    break;
+                }
+            }
+        }
+        return position;
     }
 }
