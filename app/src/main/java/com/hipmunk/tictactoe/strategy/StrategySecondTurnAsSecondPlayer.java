@@ -24,13 +24,14 @@ class StrategySecondTurnAsSecondPlayer extends Strategy {
         TTTMove opponentPosition = board.getLastMove();
 
         if (numberOfMoves == 3) {
-            position = getPositionAsSecondPlayer(board, position, opponentPosition);
+            position = getPositionAsSecondPlayer(board, opponentPosition);
         }
 
         return position;
     }
 
-    private TTTMove getPositionAsSecondPlayer(TTTBoard board, TTTMove position, TTTMove opponentLastPos) {
+    private TTTMove getPositionAsSecondPlayer(TTTBoard board, TTTMove opponentLastPos) {
+        TTTMove position;
         if (TTTRules.isCornerPosition(opponentLastPos)) {
             position = getPositionWhenOpponentChoseCornerMoves(board, opponentLastPos);
         } else {
@@ -71,8 +72,8 @@ class StrategySecondTurnAsSecondPlayer extends Strategy {
     }
 
     private TTTMove getFreeCorner(TTTMove opponentPosition) {
-        int row = opponentPosition.mXCoordinate;
-        int col = TTTRules.getOppositeCorner(opponentPosition.mYCoordinate);
+        int row = TTTRules.getOppositeCorner(opponentPosition.mXCoordinate);
+        int col = opponentPosition.mYCoordinate;
 
         TTTMove position = new TTTMove(row, col, TTTMark.BLANK);
         return position;

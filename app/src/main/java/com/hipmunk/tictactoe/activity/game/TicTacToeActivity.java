@@ -67,7 +67,7 @@ public class TicTacToeActivity extends BoardActivity implements TicTacToeView {
         Bundle b = getIntent().getExtras();
         if (b != null) {
             int first = (int) b.get("first");
-            if (first > 0) {
+            if (first == GameState.PLAYER1.getValue()) {
                 mCurrentPlayer = mHumanPlayer = GameState.PLAYER1;
                 mComputerPlayer = GameState.PLAYER2;
 

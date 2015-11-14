@@ -45,8 +45,8 @@ public class StartActivity extends ActionBarActivity {
                         .setMessage(R.string.decide_who_starts_first)
                         .setNegativeButton(R.string.you_start_first, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int whichButton) {
-                                        bundle.putInt("first", GameState.PLAYER1.getValue());
-                                        bundle.putInt("second", GameState.PLAYER2.getValue());
+                                        bundle.putInt("first", GameState.PLAYER1.getValue());//don't like this...it's confusing
+                                        bundle.putInt("second", GameState.PLAYER2.getValue());//don't like this...it's confusing
                                         i.putExtras(bundle);
                                         startActivity(i);
                                         dialog.dismiss();
@@ -56,8 +56,8 @@ public class StartActivity extends ActionBarActivity {
                         .setPositiveButton(R.string.you_start_second, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                bundle.putInt("second", GameState.PLAYER2.getValue());
-                                bundle.putInt("first", -2);
+                                bundle.putInt("second", GameState.PLAYER2.getValue());//don't like this...it's confusing
+                                bundle.putInt("first", -2); //don't like this...it's confusing. but sets first player to computer
                                 i.putExtras(bundle);
                                 startActivity(i);
                                 dialog.dismiss();
