@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:gravity="center_horizontal"
     >
-    <com.hipmunk.tictactoe.view.TicTacToeBoardLayout
+    <com.albury.tictactoe.view.TicTacToeBoardLayout
         android:id="@+id/game_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
